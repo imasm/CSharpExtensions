@@ -43,7 +43,7 @@
     <Compile Include="..\CSharpEx\Properties\AssemblyVersion.cs">
       <Link>Properties\AssemblyVersion.cs</Link>
     </Compile>
-    <Compile Include="ControlExtensions.cs" />
+    <Compile Include="ControlEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CSharpEx.Forms
 {
-    public static class ControlExtensions
+    public static class ControlEx
     {
         /// <summary>
         /// Invoke action if Invoke is requiered.
