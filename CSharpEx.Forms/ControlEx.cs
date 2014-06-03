@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace CSharpEx.Forms
 {
+    /// <summary>
+    /// Control extensions
+    /// </summary>
     public static class ControlEx
     {
         /// <summary>
