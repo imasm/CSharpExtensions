@@ -29,6 +29,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\CSharpEx.Forms.xml</DocumentationFile>
+    <NoWarn>1573</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
