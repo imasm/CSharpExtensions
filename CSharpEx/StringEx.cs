@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace CSharpEx
 {
+    /// <summary>
+    /// String Extensions
+    /// </summary>
     public static class StringEx
     {
         #region SafeSubstring
@@ -45,6 +48,49 @@ namespace CSharpEx
 
             return s.Substring(startIndex, length);
         }
+        #endregion
+
+        #region Left
+
+        /// <summary>
+        /// Returns a string containing a specified number of characters from the left side of a string.
+        /// </summary>
+        /// <param name="s">String expression from which the leftmost characters are returned.</param>
+        /// <param name="length">Numeric expression indicating how many characters to return.</param>
+        /// <returns>Returns a string containing a specified number of characters from the left side of a string.</returns>
+        public static string Left(this string s, int length)
+        {
+            if (length <= 0)
+                return string.Empty;
+
+            if (length >= s.Length)
+                return s;
+
+            return s.Substring(0, length);
+        }
+
+        #endregion
+
+        #region Right
+
+        /// <summary>
+        /// Returns a string containing a specified number of characters from the right side of a string.
+        /// </summary>
+        /// <param name="s">String expression from which the rightmost characters are returned. </param>
+        /// <param name="length">Numeric expression indicating how many characters to return.</param>
+        /// <returns>Returns a string containing a specified number of characters from the right side of a string.</returns>
+        public static string Right(this string s, int length)
+        {
+            if (length <= 0)
+                return string.Empty;
+
+            int len = s.Length;
+            if (length >= len)
+                return s;
+
+            return s.Substring(len - length);
+        }
+
         #endregion
 
         #region SplitAndTrim
