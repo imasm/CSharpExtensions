@@ -48,5 +48,14 @@ namespace CSharpEx
 
             return false;
         }
+
+        /// <summary>
+        /// Returns a number rounded to the desired multiple
+        /// </summary>
+        public static double MRound(this double value, double divisor)
+        {
+            return Math.Truncate(value / divisor) * divisor;
+        }
+            
     }
 }
