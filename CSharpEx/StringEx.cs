@@ -117,5 +117,14 @@ namespace CSharpEx
         }
 
         #endregion
+
+
+        /// <summary>
+        /// Format string. Is equivalent to string.Format()
+        /// </summary>
+        public static string Format(this string format, params object[] args)
+        {
+            return string.Format(format, args);
+        }
     }
 }
