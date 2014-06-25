@@ -48,6 +48,8 @@
     <Compile Include="TestCollections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDateTime.cs" />
+    <Compile Include="TestDecimal.cs" />
+    <Compile Include="TestDouble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
