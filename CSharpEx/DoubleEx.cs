@@ -56,6 +56,42 @@ namespace CSharpEx
         {
             return Math.Truncate(value / divisor) * divisor;
         }
+
+        /// <summary>
+        /// Rounds a double value to the nearest integer. 
+        /// When a number is halfway between two others, it is rounded toward the nearest number that is away from zero.
+        /// </summary>
+        public static double RoundAwayFromZero(this double value)
+        {
+            return Math.Round(value, MidpointRounding.AwayFromZero);
+        }
+
+        /// <summary>
+        /// Rounds a double value to the nearest integer. 
+        /// When a number is halfway between two others, it is rounded toward the nearest number that is away from zero.
+        /// </summary>
+        public static double RoundAwayFromZero(this double value, int doubles)
+        {
+            return Math.Round(value, doubles, MidpointRounding.AwayFromZero);
+        }
+
+        /// <summary>
+        /// Rounds a double value to the nearest integer. 
+        /// When a number is halfway between two others, it is rounded toward the nearest even number.
+        /// </summary>
+        public static double RoundToEven(this double value)
+        {
+            return Math.Round(value, MidpointRounding.ToEven);
+        }
+
+        /// <summary>
+        /// Rounds a double value to the nearest integer. 
+        /// When a number is halfway between two others, it is rounded toward the nearest even number.
+        /// </summary>
+        public static double RoundToEven(this double value, int doubles)
+        {
+            return Math.Round(value, doubles, MidpointRounding.ToEven);
+        }
             
     }
 }

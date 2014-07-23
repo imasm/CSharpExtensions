@@ -12,5 +12,21 @@ namespace CSharpEx.Tests
         {
             return value.MRound(divisor);
         }
+
+        [TestCase(1.5, Result = 2)]
+        [TestCase(2.5, Result = 3)]
+        [TestCase(3.5, Result = 4)]
+        public decimal TestRoundAwayFromZero(decimal value)
+        {
+            return value.RoundAwayFromZero();
+        }
+
+        [TestCase(1.5, Result = 2)]
+        [TestCase(2.5, Result = 2)]
+        [TestCase(3.5, Result = 4)]
+        public decimal TestRoundToEven(decimal value)
+        {
+            return value.RoundToEven();
+        }
     }
 }
