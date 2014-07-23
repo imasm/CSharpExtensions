@@ -22,5 +22,20 @@ namespace CSharpEx.Forms
                 action(c);
             }
         }
+
+        /// <summary>
+        /// Set DoubleBuffered property using reflection.
+        /// Call this in the constructor just after InitializeComponent().
+        /// </summary>
+        public static void SetDoubleBuffered(this Control control, bool enabled)
+        {
+            typeof (Control).InvokeMember("DoubleBuffered",
+                                          System.Reflection.BindingFlags.SetProperty |
+                                          System.Reflection.BindingFlags.Instance |
+                                          System.Reflection.BindingFlags.NonPublic,
+                                          null,
+                                          control,
+                                          new object[] {enabled});
+        }
     }
 }

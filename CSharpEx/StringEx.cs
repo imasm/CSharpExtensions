@@ -126,5 +126,21 @@ namespace CSharpEx
         {
             return string.Format(format, args);
         }
+
+        /// <summary>
+        /// Indicates whether the specified string is null or an Empty string.
+        /// </summary>
+        public static bool IsNullOrEmpty(this string value)
+        {
+            return string.IsNullOrEmpty(value);
+        }
+
+        /// <summary>
+        /// Indicates whether a specified string is null, empty, or consists only of white-space characters.
+        /// </summary>
+        public static bool IsNullOrWhiteSpace(this string value)
+        {
+            return (value == null) || (value.Trim() == String.Empty);
+        }
     }
 }
