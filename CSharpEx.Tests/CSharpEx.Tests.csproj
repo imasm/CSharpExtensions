@@ -50,6 +50,7 @@
     <Compile Include="TestDateTime.cs" />
     <Compile Include="TestDecimal.cs" />
     <Compile Include="TestDouble.cs" />
+    <Compile Include="TestStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

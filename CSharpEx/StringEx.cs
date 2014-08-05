@@ -113,7 +113,10 @@ namespace CSharpEx
         /// <returns>An array whose elements contain the substrings in this string that are delimited by one or more characters in separator.</returns>
         public static string[] SplitAndTrim(this string s, char[] separator, StringSplitOptions options)
         {
-            return s.Split(separator, options).Select(p => p.Trim()).ToArray();
+            return s.Split(separator, options)
+                .Select(p => p.Trim())
+                .Where(p => !(options == StringSplitOptions.RemoveEmptyEntries && p.IsNullOrEmpty()))
+                .ToArray();
         }
 
         #endregion
