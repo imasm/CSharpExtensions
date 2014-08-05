@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace CSharpEx
 {
@@ -103,12 +104,93 @@ namespace CSharpEx
         /// <summary>
         /// Converts the string representation of a number to its Decimal equivalent.
         /// </summary>
+        public static decimal ParseToDecimal(this string str, IFormatProvider formatProvider)
+        {
+            return decimal.Parse(str, formatProvider);
+        }
+
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
+        public static decimal ParseToDecimal(this string str, NumberStyles numberStyles)
+        {
+            return decimal.Parse(str, numberStyles);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
+        public static decimal ParseToDecimal(this string str, NumberStyles numberStyles, IFormatProvider formatProvider)
+        {
+            return decimal.Parse(str, numberStyles, formatProvider);
+        }
+
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
         public static decimal ParseToDecimalOrDefault(this string str, decimal defaultValue = default (decimal))
         {
             try
             {
                 if (!string.IsNullOrEmpty(str))
                     return decimal.Parse(str);
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
+        public static decimal ParseToDecimalOrDefault(this string str, IFormatProvider formatProvider,
+                                                      decimal defaultValue = default (decimal))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return decimal.Parse(str, formatProvider);
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
+        public static decimal ParseToDecimalOrDefault(this string str, NumberStyles numberStyles,
+                                                      decimal defaultValue = default (decimal))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return decimal.Parse(str, numberStyles);
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Decimal equivalent.
+        /// </summary>
+        public static decimal ParseToDecimalOrDefault(this string str, NumberStyles numberStyles,
+                                                      IFormatProvider formatProvider,
+                                                      decimal defaultValue = default (decimal))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return decimal.Parse(str, numberStyles, formatProvider);
                 return defaultValue;
             }
             catch
@@ -132,12 +214,94 @@ namespace CSharpEx
         /// <summary>
         /// Converts the string representation of a number to its Double equivalent.
         /// </summary>
+        public static double ParseToDouble(this string str, IFormatProvider formatProvider)
+        {
+            return double.Parse(str, formatProvider);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
+        public static double ParseToDouble(this string str, NumberStyles numberStyles)
+        {
+            return double.Parse(str, numberStyles);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
+        public static double ParseToDouble(this string str, NumberStyles numberStyles, IFormatProvider formatProvider)
+        {
+            return double.Parse(str, numberStyles, formatProvider);
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
         public static double ParseToDoubleOrDefault(this string str, double defaultValue = default (double))
         {
             try
             {
                 if (!string.IsNullOrEmpty(str))
                     return double.Parse(str);
+
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
+        public static double ParseToDoubleOrDefault(this string str, IFormatProvider formatProvider,
+                                                    double defaultValue = default (double))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return double.Parse(str, formatProvider);
+
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
+        public static double ParseToDoubleOrDefault(this string str, NumberStyles numberStyles,
+                                                    double defaultValue = default (double))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return double.Parse(str, numberStyles);
+
+                return defaultValue;
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Converts the string representation of a number to its Double equivalent.
+        /// </summary>
+        public static double ParseToDoubleOrDefault(this string str, NumberStyles numberStyles,
+                                                    IFormatProvider formatProvider,
+                                                    double defaultValue = default (double))
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(str))
+                    return double.Parse(str, numberStyles, formatProvider);
 
                 return defaultValue;
             }
