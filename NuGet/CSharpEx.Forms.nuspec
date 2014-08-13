@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>CSharpEx.Forms</id>
-        <version>0.0.6-Beta</version>
+        <version>0.0.7-Beta</version>
         <title>CSharpExtensions (WinForms)</title>
         <authors>Ivan Masmitjà</authors>
         <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>

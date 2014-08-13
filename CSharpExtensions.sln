@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpEx.Forms", "CSharpEx.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40B1F3CE-6657-4B8B-8386-CDECAF25D1F8}"
 	ProjectSection(SolutionItems) = preProject
+		NuGet\CSharpEx.Forms.nuspec = NuGet\CSharpEx.Forms.nuspec
+		NuGet\CSharpEx.nuspec = NuGet\CSharpEx.nuspec
 		README.md = README.md
 	EndProjectSection
 EndProject
