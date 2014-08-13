@@ -1,4 +1,22 @@
-﻿using System;
+﻿#region LICENSE
+
+//    Copyright 2014 Ivan Masmità
+// 
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+// 
+//        http://www.apache.org/licenses/LICENSE-2.0
+// 
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+#endregion
+
+using System;
 using NUnit.Framework;
 
 namespace CSharpEx.Tests
@@ -7,6 +25,7 @@ namespace CSharpEx.Tests
     public class TestStrings
     {
         #region SplitAndTrim
+
         [Test]
         public void TestSplitAndTrim()
         {
@@ -15,7 +34,7 @@ namespace CSharpEx.Tests
             Assert.AreEqual(5, array.Length);
             for (int i = 0; i < 5; i++)
             {
-                Assert.AreEqual( i.ToString(), array[i]);
+                Assert.AreEqual(i.ToString(), array[i]);
             }
         }
 
@@ -23,7 +42,7 @@ namespace CSharpEx.Tests
         public void TestSplitAndTrimWithEmpty()
         {
             const string sample = "0 , 1 ,  ,  2 ,, 3 ,4 ";
-            var array = sample.SplitAndTrim(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries);
+            var array = sample.SplitAndTrim(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
             Assert.AreEqual(5, array.Length);
             for (int i = 0; i < 5; i++)
             {
@@ -35,17 +54,19 @@ namespace CSharpEx.Tests
         public void TestSplitAndTrimWithEmptyInMiddle()
         {
             const string sample = "0 , 1 ,  ,  2 A,, 3 ,4 ";
-            var array = sample.SplitAndTrim(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var array = sample.SplitAndTrim(new char[] {','}, StringSplitOptions.RemoveEmptyEntries);
             Assert.AreEqual(5, array.Length);
             for (int i = 0; i < 5; i++)
             {
                 if (i == 2)
                 {
                     Assert.AreEqual("2 A", array[i]);
-                } else
+                }
+                else
                     Assert.AreEqual(i.ToString(), array[i]);
             }
         }
+
         #endregion
 
         #region Conversions
@@ -58,7 +79,7 @@ namespace CSharpEx.Tests
             Assert.AreEqual(0, "A".ParseToIntOrDefault());
             Assert.AreEqual(-1, "A".ParseToIntOrDefault(-1));
             Assert.AreEqual(0, "".ParseToIntOrDefault());
-            Assert.AreEqual(0, ((string)null).ParseToIntOrDefault(0));
+            Assert.AreEqual(0, ((string) null).ParseToIntOrDefault(0));
         }
 
         [Test]
@@ -67,7 +88,7 @@ namespace CSharpEx.Tests
             Assert.AreEqual(5, '5'.ParseToShort());
             Assert.AreEqual(5, '5'.ParseToShortOrDefault());
             Assert.AreEqual(0, 'A'.ParseToShortOrDefault());
-            Assert.AreEqual(-1,'A'.ParseToShortOrDefault(-1));
+            Assert.AreEqual(-1, 'A'.ParseToShortOrDefault(-1));
         }
 
         [Test]
@@ -78,7 +99,7 @@ namespace CSharpEx.Tests
             Assert.AreEqual(0, "A".ParseToLongOrDefault());
             Assert.AreEqual(-1, "Asdfsdfsd".ParseToLongOrDefault(-1));
             Assert.AreEqual(0, "".ParseToLongOrDefault());
-            Assert.AreEqual(0, ((string)null).ParseToLongOrDefault(0));
+            Assert.AreEqual(0, ((string) null).ParseToLongOrDefault(0));
         }
 
         [Test]
@@ -90,7 +111,7 @@ namespace CSharpEx.Tests
             Assert.AreEqual(0, "A".ParseToDoubleOrDefault());
             Assert.AreEqual(-1, "Asdfsdfsd".ParseToDoubleOrDefault(-1));
             Assert.AreEqual(0, "".ParseToDoubleOrDefault());
-            Assert.AreEqual(0, ((string)null).ParseToDoubleOrDefault(0));
+            Assert.AreEqual(0, ((string) null).ParseToDoubleOrDefault(0));
         }
 
         [Test]
@@ -101,10 +122,9 @@ namespace CSharpEx.Tests
             Assert.AreEqual(0, "A".ParseToLongOrDefault());
             Assert.AreEqual(-1, "Asdfsdfsd".ParseToLongOrDefault(-1));
             Assert.AreEqual(0, "".ParseToLongOrDefault());
-            Assert.AreEqual(0, ((string)null).ParseToLongOrDefault(0));
+            Assert.AreEqual(0, ((string) null).ParseToLongOrDefault(0));
         }
+
         #endregion
-
-
     }
 }
