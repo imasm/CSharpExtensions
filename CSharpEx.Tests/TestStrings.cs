@@ -128,7 +128,7 @@ namespace CSharpEx.Tests
         public void TestDouble()
         {
             Assert.AreEqual(5, "5".ParseToDouble());
-            Assert.AreEqual(5, "5.5".ParseToDouble());
+            Assert.AreEqual(5.5, (5.5).ToString().ParseToDouble());
             Assert.AreEqual(1234567890123, "1234567890123".ParseToDoubleOrDefault());
             Assert.AreEqual(0, "A".ParseToDoubleOrDefault());
             Assert.AreEqual(-1, "Asdfsdfsd".ParseToDoubleOrDefault(-1));
@@ -139,12 +139,12 @@ namespace CSharpEx.Tests
         [Test]
         public void TestDecimal()
         {
-            Assert.AreEqual(5, "5".ParseToLong());
-            Assert.AreEqual(1234567890123, "1234567890123".ParseToLongOrDefault());
-            Assert.AreEqual(0, "A".ParseToLongOrDefault());
-            Assert.AreEqual(-1, "Asdfsdfsd".ParseToLongOrDefault(-1));
-            Assert.AreEqual(0, "".ParseToLongOrDefault());
-            Assert.AreEqual(0, ((string) null).ParseToLongOrDefault(0));
+            Assert.AreEqual(5, "5".ParseToDecimal());
+            Assert.AreEqual(5.5, (5.5M).ToString().ParseToDecimal());
+            Assert.AreEqual(0, "A".ParseToDecimalOrDefault());
+            Assert.AreEqual(-1, "Asdfsdfsd".ParseToDecimalOrDefault(-1M));
+            Assert.AreEqual(0, "".ParseToDecimalOrDefault());
+            Assert.AreEqual(0, ((string)null).ParseToDecimalOrDefault(0M));
         }
 
         #endregion
