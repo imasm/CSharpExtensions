@@ -139,6 +139,7 @@ namespace CSharpEx
 
         #endregion
 
+        #region Format
         /// <summary>
         /// Format string. Is equivalent to string.Format()
         /// </summary>
@@ -146,7 +147,9 @@ namespace CSharpEx
         {
             return string.Format(format, args);
         }
+        #endregion
 
+        #region IsNull
         /// <summary>
         /// Indicates whether the specified string is null or an Empty string.
         /// </summary>
@@ -162,5 +165,68 @@ namespace CSharpEx
         {
             return (value == null) || (value.Trim() == String.Empty);
         }
+        #endregion
+
+        #region Equals
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// </summary>
+        public static bool EqualsNullSafe(this string thisString, string other)
+        {
+            if (thisString == null)
+                return other == null;
+
+            return thisString.Equals(other);
+        }
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// </summary>
+        public static bool EqualsNullSafe(this string thisString, string other, StringComparison stringComparison)
+        {
+            if (thisString == null)
+                return other == null;
+
+            return thisString.Equals(other, stringComparison);
+        }
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// Uses StringComparison.InvariantCulture in the comparison.
+        /// </summary>
+        public static bool EqualsInv(this string thisString, string other)
+        {
+            return EqualsNullSafe(thisString, other, StringComparison.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// Uses StringComparison.InvariantCultureIgnoreCase in the comparison.
+        /// </summary>
+        public static bool EqualsInvIC(this string thisString, string other)
+        {
+            return EqualsNullSafe(thisString, other, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// Uses StringComparison.Ordinal in the comparison.
+        /// </summary>
+        public static bool EqualsOrd(this string thisString, string other)
+        {
+            return EqualsNullSafe(thisString, other, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// Determines whether this instance and another specified String object have the same value or both are null. 
+        /// Uses StringComparison.OrdinalIgnoreCase in the comparison.
+        /// </summary>
+        public static bool EqualsOrdIC(this string thisString, string other)
+        {
+            return EqualsNullSafe(thisString, other, StringComparison.OrdinalIgnoreCase);
+        }
+
+        #endregion
     }
 }
