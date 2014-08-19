@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionsEx.cs" />
+    <Compile Include="Data\DbDataReaderExtensions.cs" />
     <Compile Include="DateTimeEx.cs" />
     <Compile Include="DecimalEx.cs" />
     <Compile Include="DoubleEx.cs" />
