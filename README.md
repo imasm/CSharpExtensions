@@ -172,21 +172,21 @@ some examples:
 ```csharp
 using (DbDataReader dr = cmd.ExecuteReader()) {
 
-	dr.ReadIntOrDefault(0); // returns field value as int or 0 if it's null
+	dr.ReadIntOrDefault(0); // returns dr[0] value as int or 0 if it's null
 	
-	dr.ReadStringOrDefault("COLUMN"); // returns field value as string or null if it's null
+	dr.ReadStringOrDefault("COLUMN1"); // returns dr["COLUMN1"] value as string or null if it's null
 	
-	dr.ReadStringOrEmpty("COLUMN"); // returns field value as string or "" if it's null
+	dr.ReadStringOrEmpty("COLUMN2"); // returns dr["COLUMN2"] value as string or "" if it's null
 	
-	dr.ReadShortOrDefault(-1); // returns field value as short or -1 if it's null
+	dr.ReadShortOrDefault(3 ,-1); // returns dr[3] value as short or -1 if it's null
 
-	dr.ReadLongOrDefault(); // returns field value as long or 0 if it's null
+	dr.ReadLongOrDefault(4); // returns dr[4] value as long or 0 if it's null
 
-	dr.ReadDateTimeOrDefault(); // returns field value as DateTime or DateTime.MinValue if it's null
+	dr.ReadDateTimeOrDefault(5); // returns dr[5] value as DateTime or DateTime.MinValue if it's null
 
-	dr.ReadDoubleOrDefault(); // returns field value as double or 0 if it's null
+	dr.ReadDoubleOrDefault(6; // returns dr[6] field value as double or 0 if it's null
 
-	dr.ReadDecimalOrDefault(); // returns field value as decimal or 0 if it's null
+	dr.ReadDecimalOrDefault(7); // returns dr[7] field value as decimal or 0 if it's null
 }
 
 ```
