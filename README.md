@@ -159,3 +159,34 @@ When a number is halfway between two others, it is rounded toward the nearest ev
 2.5.RoundToEven();  // Result = 2
 3.5.RoundToEven();  // Result = 4
 ```
+
+
+
+# System.Data
+## DbDataReader Extensions
+
+Get value from dataReader or a default value if database field is null.
+
+some examples: 
+
+```csharp
+using (DbDataReader dr = cmd.ExecuteReader()) {
+
+	dr.ReadIntOrDefault(0); // returns field value as int or 0 if it's null
+	
+	dr.ReadStringOrDefault("COLUMN"); // returns field value as string or null if it's null
+	
+	dr.ReadStringOrEmpty("COLUMN"); // returns field value as string or "" if it's null
+	
+	dr.ReadShortOrDefault(-1); // returns field value as short or -1 if it's null
+
+	dr.ReadLongOrDefault(); // returns field value as long or 0 if it's null
+
+	dr.ReadDateTimeOrDefault(); // returns field value as DateTime or DateTime.MinValue if it's null
+
+	dr.ReadDoubleOrDefault(); // returns field value as double or 0 if it's null
+
+	dr.ReadDecimalOrDefault(); // returns field value as decimal or 0 if it's null
+}
+
+```
