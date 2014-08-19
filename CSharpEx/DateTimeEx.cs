@@ -1,4 +1,23 @@
-﻿using System;
+﻿#region LICENSE
+
+//    Copyright 2014 Ivan Masmità
+// 
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+// 
+//        http://www.apache.org/licenses/LICENSE-2.0
+// 
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+#endregion
+
+using System;
+
 namespace CSharpEx
 {
     /// <summary>
@@ -20,14 +39,15 @@ namespace CSharpEx
         }
 
         #region Truncate
+
         /// <summary>
         /// Truncate DateTime
         /// </summary>
         public static DateTime TruncateTo(this DateTime dt, TimeSpan divisor)
         {
-            return new DateTime((dt.Ticks / divisor.Ticks)  * divisor.Ticks);
+            return new DateTime((dt.Ticks / divisor.Ticks) * divisor.Ticks);
         }
-        
+
         /// <summary>
         /// Truncate DateTime to seconds
         /// </summary>
@@ -53,16 +73,18 @@ namespace CSharpEx
         {
             return TruncateTo(dt, TimeSpan.FromHours(1));
         }
+
         #endregion
 
         #region Round
+
         /// <summary>
         /// Round DateTime
         /// </summary>
         public static DateTime RoundTo(this DateTime dt, TimeSpan divisor)
         {
             int f = 0;
-            double m = (double)(dt.Ticks % divisor.Ticks) / divisor.Ticks;
+            double m = (double) (dt.Ticks % divisor.Ticks) / divisor.Ticks;
             if (m >= 0.5)
                 f = 1;
             return new DateTime(((dt.Ticks / divisor.Ticks) + f) * divisor.Ticks);
@@ -95,6 +117,7 @@ namespace CSharpEx
         {
             return RoundTo(dt, TimeSpan.FromHours(1));
         }
+
         #endregion
     }
 }

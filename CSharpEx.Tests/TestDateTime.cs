@@ -1,4 +1,22 @@
-﻿using System;
+﻿#region LICENSE
+
+//    Copyright 2014 Ivan Masmità
+// 
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+// 
+//        http://www.apache.org/licenses/LICENSE-2.0
+// 
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+#endregion
+
+using System;
 using NUnit.Framework;
 
 namespace CSharpEx.Tests
@@ -44,7 +62,7 @@ namespace CSharpEx.Tests
 
             var d4 = new DateTime(2014, 01, 1, 12, 46, 35, 20);
             var dHour = new DateTime(2014, 01, 1, 13, 00, 00);
-            var dQuarters = new DateTime(2014, 01, 1, 12, 45, 00,00);
+            var dQuarters = new DateTime(2014, 01, 1, 12, 45, 00, 00);
 
             Assert.AreEqual(dMinuteLow, d1.RoundToMinute()); // 12:02.25 -> 12:02
             Assert.AreEqual(dMinuteUp, d2.RoundToMinute()); //12:02.35 -> 12:03

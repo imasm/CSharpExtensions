@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>CSharpEx.Forms</id>
-        <version>0.0.7-Beta</version>
+        <version>0.0.8-Beta</version>
         <title>CSharpExtensions (WinForms)</title>
         <authors>Ivan Masmitjà</authors>
         <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>

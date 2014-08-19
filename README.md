@@ -4,28 +4,57 @@ Useful extensions for C#.
 
 ## String extensions
 
+#### EqualsNullSafe
+
+Null safe string comparison 
+
+```csharp
+const string str1 = "123";
+const string str2 = "123";
+const string str3 = "abc";
+const string strNull = null;
+
+str1.EqualsNullSafe(str1); // true
+str1.EqualsNullSafe(str2); // true
+str1.EqualsNullSafe(str3); // false
+
+str1.EqualsNullSafe(strNull);     // false
+strNull.EqualsNullSafe(str1);     // false
+strNull.EqualsNullSafe(strNull);  // true
+```
+
+#### EqualsAbbreviations
+
+```csharp
+strA.EqualsInv(strB)    // Invariant Culture (Null safe)
+strA.EqualsInvIC(strB)  // Invariant Culture, Ignore case (Null safe)
+
+strA.EqualsOrd(strB)    // Ordinal Culture (Null safe)
+strA.EqualsOrdIC(strB)  // Ordinal Culture, Ignore case (Null safe)
+```
+
 #### SafeSubstring()
 
 Substring with range checking.
 
 ```csharp
-string s = "12345".SafeSubstring(0,3);  // s is "123"
+string s = "12345".SafeSubstring(0,3);   // s is "123"
 string s = "12345".SafeSubstring(0,10);  // s is "12345"
 
-string s = "12345".SafeSubstring(3);  // s is "45"
+string s = "12345".SafeSubstring(3);     // s is "45"
 string s = "12345".SafeSubstring(3, 5);  // s is "45"
 
-string s = "12345".SafeSubstring(10);  // s is ""
+string s = "12345".SafeSubstring(10);    // s is ""
 ```
 
 #### Right() / Left()
 
 ```csharp
-string s = "12345".Left(3);  // s is "123"
+string s = "12345".Left(3);   // s is "123"
 string s = "12345".Right(2);  // s is "45"
 
 string s = "12345".Left(10);  // s is "12345"
-string s = "12345".Right(10);  // s is "12345"
+string s = "12345".Right(10); // s is "12345"
 ```
 
 #### SplitAndTrim()
@@ -129,4 +158,35 @@ When a number is halfway between two others, it is rounded toward the nearest ev
 1.5.RoundToEven();  // Result = 2
 2.5.RoundToEven();  // Result = 2
 3.5.RoundToEven();  // Result = 4
+```
+
+
+
+# System.Data
+## DbDataReader Extensions
+
+Get value from dataReader or a default value if database field is null.
+
+some examples: 
+
+```csharp
+using (DbDataReader dr = cmd.ExecuteReader()) {
+
+	dr.ReadIntOrDefault(0); // returns dr[0] value as int or 0 if it's null
+	
+	dr.ReadStringOrDefault("COLUMN1"); // returns dr["COLUMN1"] value as string or null if it's null
+	
+	dr.ReadStringOrEmpty("COLUMN2"); // returns dr["COLUMN2"] value as string or "" if it's null
+	
+	dr.ReadShortOrDefault(3 ,-1); // returns dr[3] value as short or -1 if it's null
+
+	dr.ReadLongOrDefault(4); // returns dr[4] value as long or 0 if it's null
+
+	dr.ReadDateTimeOrDefault(5); // returns dr[5] value as DateTime or DateTime.MinValue if it's null
+
+	dr.ReadDoubleOrDefault(6; // returns dr[6] field value as double or 0 if it's null
+
+	dr.ReadDecimalOrDefault(7); // returns dr[7] field value as decimal or 0 if it's null
+}
+
 ```
