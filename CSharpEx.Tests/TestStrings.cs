@@ -69,6 +69,28 @@ namespace CSharpEx.Tests
 
         #endregion
 
+        #region Equals
+
+        [Test]
+        public void TestEquals()
+        {
+            const string str1 = "123";
+            const string str2 = "123";
+            const string str3 = "abc";
+            const string strNull = null;
+
+            Assert.IsTrue(str1.EqualsNullSafe(str1));
+            Assert.IsTrue(str1.EqualsNullSafe(str2));
+            Assert.IsFalse(str1.EqualsNullSafe(str3));
+
+            Assert.IsFalse(str1.EqualsNullSafe(strNull));
+            Assert.IsFalse(strNull.EqualsNullSafe(str1));
+            Assert.IsTrue(strNull.EqualsNullSafe(strNull));
+
+        }
+
+        #endregion
+
         #region Conversions
 
         [Test]
