@@ -190,7 +190,7 @@ namespace CSharpEx.Data
         /// Gets the value of the specified column as an instance of short. 
         /// If value is DbNull returns the default value.
         /// </summary>
-        public static short GetShortOrdDefault(this DbDataReader dr, int i, short defaultValue)
+        public static short GetShortOrDefault(this DbDataReader dr, int i, short defaultValue)
         {
             if (dr.IsDBNull(i))
                 return defaultValue;
@@ -201,9 +201,9 @@ namespace CSharpEx.Data
         /// Gets the value of the specified column as an instance of short. 
         /// If value is DbNull returns the default value.
         /// </summary>
-        public static short GetShortOrdDefault(this DbDataReader dr, int i)
+        public static short GetShortOrDefault(this DbDataReader dr, int i)
         {
-            return GetShortOrdDefault(dr, i, default(short));
+            return GetShortOrDefault(dr, i, default(short));
         }
 
         /// <summary>
@@ -211,9 +211,9 @@ namespace CSharpEx.Data
         /// If value is DbNull returns the default value.
         /// <remarks>Column must exist</remarks>
         /// </summary>
-        public static short GetShortOrdDefault(this DbDataReader dr, string columnName, short defaultValue)
+        public static short GetShortOrDefault(this DbDataReader dr, string columnName, short defaultValue)
         {
-            return GetShortOrdDefault(dr, dr.GetOrdinal(columnName), defaultValue);
+            return GetShortOrDefault(dr, dr.GetOrdinal(columnName), defaultValue);
         }
 
         /// <summary>
@@ -221,9 +221,53 @@ namespace CSharpEx.Data
         /// If value is DbNull returns default value
         /// <remarks>Column must exist</remarks>
         /// </summary>
-        public static short GetShortOrdDefault(this DbDataReader dr, string columnName)
+        public static short GetShortOrDefault(this DbDataReader dr, string columnName)
         {
-            return GetShortOrdDefault(dr, dr.GetOrdinal(columnName));
+            return GetShortOrDefault(dr, dr.GetOrdinal(columnName));
+        }
+
+        #endregion
+
+        #region GetByte
+
+        /// <summary>
+        /// Gets the value of the specified column as an instance of byte (tinyint). 
+        /// If value is DbNull returns the default value.
+        /// </summary>
+        public static short GetByteOrDefault(this DbDataReader dr, int i, byte defaultValue)
+        {
+            if (dr.IsDBNull(i))
+                return defaultValue;
+            return dr.GetByte(i);
+        }
+
+        /// <summary>
+        /// Gets the value of the specified column as an instance of byte (tinyint). 
+        /// If value is DbNull returns the default value.
+        /// </summary>
+        public static short GetByteOrDefault(this DbDataReader dr, int i)
+        {
+            return GetByteOrDefault(dr, i, default(byte));
+        }
+
+        /// <summary>
+        /// Gets the value of the specified column as an instance of byte (tinyint). 
+        /// If value is DbNull returns the default value.
+        /// <remarks>Column must exist</remarks>
+        /// </summary>
+        public static short GetByteOrDefault(this DbDataReader dr, string columnName, byte defaultValue)
+        {
+            return GetByteOrDefault(dr, dr.GetOrdinal(columnName), defaultValue);
+        }
+
+        /// <summary>
+        /// Gets the value of the specified column as an instance of byte (tinyint). 
+        /// If value is DbNull returns default value
+        /// <remarks>Column must exist</remarks>
+        /// </summary>
+        public static short GetByteOrDefault(this DbDataReader dr, string columnName)
+        {
+            return GetByteOrDefault(dr, dr.GetOrdinal(columnName));
         }
 
         #endregion
