@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CSharpEx.Forms
@@ -54,6 +55,23 @@ namespace CSharpEx.Forms
                                           null,
                                           control,
                                           new object[] {enabled});
+        }
+
+
+        /// <summary> Center control </summary>
+        public static void CenterInParent(this Control control, Control parent)
+        {
+            int x = (parent.Width - control.Width) / 2;
+            int y = (parent.Height - control.Height) / 2;
+
+            control.Location = new Point(parent.Location.X + x, parent.Location.Y + y);
+        }
+
+        /// <summary> Center control </summary>
+        public static void CenterInParent(this Control control)
+        {
+            if (control.Parent != null)
+                CenterInParent(control, control.Parent);
         }
     }
 }
