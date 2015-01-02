@@ -18,6 +18,8 @@
 
 using System;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CSharpEx
 {
@@ -227,6 +229,37 @@ namespace CSharpEx
             return EqualsNullSafe(thisString, other, StringComparison.OrdinalIgnoreCase);
         }
 
+        #endregion
+
+        #region SplitLines
+        /// <summary> Split string into lines </summary>
+        public static string[] SplitLines(this string thisString)
+        {
+            return Regex.Split(thisString, "\r\n|\r|\n");
+        }
+        #endregion
+
+        #region Repeat
+        /// <summary> Repeat a string and concat the results. </summary>
+        public static string Repeat(this string thisString, int times)
+        {
+            if (thisString == null)
+                throw new ArgumentNullException("thisString", "string parameter is null");
+
+            if (times < 0)
+                throw new ArgumentNullException("times", "times parameter negative");
+
+            if ((thisString.Length == 0) || (times == 0))
+                return "";
+
+            StringBuilder sb = new StringBuilder(times * thisString.Length);
+            for (int i = 0; i < times; i++)
+            {
+                sb.Append(thisString);
+            }
+
+            return sb.ToString();
+        }
         #endregion
     }
 }
