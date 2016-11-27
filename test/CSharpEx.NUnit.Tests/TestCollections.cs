@@ -16,11 +16,12 @@
 
 #endregion
 
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections.Generic;
+
 
 namespace CSharpEx.Tests
-{
+{ 
     [TestFixture]
     public class TestCollections
     {
@@ -31,9 +32,9 @@ namespace CSharpEx.Tests
         [Test]
         public void TestIsNullOrEmptyList()
         {
-            Assert.IsTrue(_nullList.IsNullOrEmpty());
-            Assert.IsTrue(_emptyList.IsNullOrEmpty());
-            Assert.IsFalse(_list.IsNullOrEmpty());
+            Assert.True(_nullList.IsNullOrEmpty());
+            Assert.True(_emptyList.IsNullOrEmpty());
+            Assert.False(_list.IsNullOrEmpty());
         }
 
         [Test]

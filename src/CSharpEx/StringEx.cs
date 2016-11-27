@@ -193,29 +193,12 @@ namespace CSharpEx
             return thisString.Equals(other, stringComparison);
         }
 
-        /// <summary>
-        /// Determines whether this instance and another specified String object have the same value or both are null. 
-        /// Uses StringComparison.InvariantCulture in the comparison.
-        /// </summary>
-        public static bool EqualsInv(this string thisString, string other)
-        {
-            return EqualsNullSafe(thisString, other, StringComparison.InvariantCulture);
-        }
-
-        /// <summary>
-        /// Determines whether this instance and another specified String object have the same value or both are null. 
-        /// Uses StringComparison.InvariantCultureIgnoreCase in the comparison.
-        /// </summary>
-        public static bool EqualsInvIC(this string thisString, string other)
-        {
-            return EqualsNullSafe(thisString, other, StringComparison.InvariantCultureIgnoreCase);
-        }
-
+       
         /// <summary>
         /// Determines whether this instance and another specified String object have the same value or both are null. 
         /// Uses StringComparison.Ordinal in the comparison.
         /// </summary>
-        public static bool EqualsOrd(this string thisString, string other)
+        public static bool EqualsOrdinal(this string thisString, string other)
         {
             return EqualsNullSafe(thisString, other, StringComparison.Ordinal);
         }
@@ -224,7 +207,7 @@ namespace CSharpEx
         /// Determines whether this instance and another specified String object have the same value or both are null. 
         /// Uses StringComparison.OrdinalIgnoreCase in the comparison.
         /// </summary>
-        public static bool EqualsOrdIC(this string thisString, string other)
+        public static bool EqualsOrdinalIgnoreCase(this string thisString, string other)
         {
             return EqualsNullSafe(thisString, other, StringComparison.OrdinalIgnoreCase);
         }
